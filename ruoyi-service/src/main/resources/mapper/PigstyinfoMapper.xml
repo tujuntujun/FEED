@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.service.mapper.PigstyinfoMapper">
+    
+    <resultMap type="Pigstyinfo" id="PigstyinfoResult">
+        <result property="id"    column="id"    />
+        <result property="logId"    column="log_id"    />
+        <result property="dName"    column="d_name"    />
+        <result property="recTime"    column="rec_time"    />
+        <result property="temV"    column="tem_v"    />
+        <result property="rhV"    column="rh_v"    />
+        <result property="lightV"    column="light_v"    />
+        <result property="agV"    column="ag_v"    />
+    </resultMap>
+	
+	<sql id="selectPigstyinfoVo">
+        select id, log_id, d_name, rec_time, tem_v, rh_v, light_v, ag_v from pigstyinfo
+    </sql>
+	
+    <select id="selectPigstyinfoList" parameterType="Pigstyinfo" resultMap="PigstyinfoResult">
+        <include refid="selectPigstyinfoVo"/>
+        <where>  
+            <if test="id != null "> and id = #{id}</if>
+             <if test="logId != null "> and log_id = #{logId}</if>
+             <if test="dName != null  and dName != '' "> and d_name = #{dName}</if>
+             <if test="recTime != null "> and rec_time = #{recTime}</if>
+             <if test="temV != null "> and tem_v = #{temV}</if>
+             <if test="rhV != null "> and rh_v = #{rhV}</if>
+             <if test="lightV != null "> and light_v = #{lightV}</if>
+             <if test="agV != null "> and ag_v = #{agV}</if>
+         </where>
+    </select>
+    
+    <select id="selectPigstyinfoById" parameterType="Integer" resultMap="PigstyinfoResult">
+        <include refid="selectPigstyinfoVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertPigstyinfo" parameterType="Pigstyinfo" useGeneratedKeys="true" keyProperty="id">
+        insert into pigstyinfo
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="logId != null  ">log_id,</if>
+			<if test="dName != null  and dName != ''  ">d_name,</if>
+			<if test="recTime != null  ">rec_time,</if>
+			<if test="temV != null  ">tem_v,</if>
+			<if test="rhV != null  ">rh_v,</if>
+			<if test="lightV != null  ">light_v,</if>
+			<if test="agV != null  ">ag_v,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="logId != null  ">#{logId},</if>
+			<if test="dName != null  and dName != ''  ">#{dName},</if>
+			<if test="recTime != null  ">#{recTime},</if>
+			<if test="temV != null  ">#{temV},</if>
+			<if test="rhV != null  ">#{rhV},</if>
+			<if test="lightV != null  ">#{lightV},</if>
+			<if test="agV != null  ">#{agV},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updatePigstyinfo" parameterType="Pigstyinfo">
+        update pigstyinfo
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="logId != null  ">log_id = #{logId},</if>
+            <if test="dName != null  and dName != ''  ">d_name = #{dName},</if>
+            <if test="recTime != null  ">rec_time = #{recTime},</if>
+            <if test="temV != null  ">tem_v = #{temV},</if>
+            <if test="rhV != null  ">rh_v = #{rhV},</if>
+            <if test="lightV != null  ">light_v = #{lightV},</if>
+            <if test="agV != null  ">ag_v = #{agV},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+	<delete id="deletePigstyinfoById" parameterType="Integer">
+        delete from pigstyinfo where id = #{id}
+    </delete>
+	
+    <delete id="deletePigstyinfoByIds" parameterType="String">
+        delete from pigstyinfo where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+    <select id="recentTwentyByTime" resultType="HashMap">
+        <include refid="selectPigstyinfoVo"/>
+        order by rec_time desc
+        limit 0,20
+    </select>
+    
+</mapper>

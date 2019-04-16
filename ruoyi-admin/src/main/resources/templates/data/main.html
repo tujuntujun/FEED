@@ -1,0 +1,54 @@
+<!--控制中心-->
+<!DOCTYPE html>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--360浏览器优先以webkit内核解析-->
+    <title>AI_FEED</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="../../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
+    <link href="../../static/css/main/animate.min.css" th:href="@{/css/main/animate.min.css}" rel="stylesheet"/>
+    <link href="../../static/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
+
+    <!--echarts 可视化图形 插件-->
+    <script th:src="@{/js/plugins/echarts/echarts.min.js}"></script>
+    <script th:src="@{/js/plugins/echarts/echarts-gl.min.js}"></script>
+</head>
+
+<body class="gray-bg" onload="main_onload()">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="panel">
+                <div class="panel-body">
+                    <iframe allowtransparency="true" frameborder="0" width="575"
+                            height="96" scrolling="no"
+                            src="//tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=0&v=0&d=5&bd=0&k=000000&f=&ltf=009944&htf=cc0000&q=1&e=1&a=1&c=54511&w=575&h=96&align=right"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper wrapper-content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>总数据</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="echarts" id="test_1"  style="height: 500px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+</div>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!--引入main页面的JS文件-->
+<script th:src="@{/js/view/mian.js}"></script>
+</body>
+</html>

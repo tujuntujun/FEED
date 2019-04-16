@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.service.mapper.MotorMapper">
+    
+    <resultMap type="Motor" id="MotorResult">
+        <result property="oid"    column="oid"    />
+        <result property="startTime"    column="start_time"    />
+        <result property="endTime"    column="end_time"    />
+        <result property="duration"    column="duration"    />
+        <result property="dName"    column="d_name"    />
+    </resultMap>
+	
+	<sql id="selectMotorVo">
+        select oid, start_time, end_time, duration, d_name from motor
+    </sql>
+	
+    <select id="selectMotorList" parameterType="Motor" resultMap="MotorResult">
+        <include refid="selectMotorVo"/>
+        <where>  
+            <if test="oid != null "> and oid = #{oid}</if>
+             <if test="startTime != null "> and start_time = #{startTime}</if>
+             <if test="endTime != null "> and end_time = #{endTime}</if>
+             <if test="duration != null "> and duration = #{duration}</if>
+             <if test="dName != null  and dName != '' "> and d_name = #{dName}</if>
+         </where>
+    </select>
+    
+    <select id="selectMotorById" parameterType="Integer" resultMap="MotorResult">
+        <include refid="selectMotorVo"/>
+        where oid = #{oid}
+    </select>
+        
+    <insert id="insertMotor" parameterType="Motor" useGeneratedKeys="true" keyProperty="oid">
+        insert into motor
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="startTime != null  ">start_time,</if>
+			<if test="endTime != null  ">end_time,</if>
+			<if test="duration != null  ">duration,</if>
+			<if test="dName != null  and dName != ''  ">d_name,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="startTime != null  ">#{startTime},</if>
+			<if test="endTime != null  ">#{endTime},</if>
+			<if test="duration != null  ">#{duration},</if>
+			<if test="dName != null  and dName != ''  ">#{dName},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateMotor" parameterType="Motor">
+        update motor
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="startTime != null  ">start_time = #{startTime},</if>
+            <if test="endTime != null  ">end_time = #{endTime},</if>
+            <if test="duration != null  ">duration = #{duration},</if>
+            <if test="dName != null  and dName != ''  ">d_name = #{dName},</if>
+        </trim>
+        where oid = #{oid}
+    </update>
+
+	<delete id="deleteMotorById" parameterType="Integer">
+        delete from motor where oid = #{oid}
+    </delete>
+	
+    <delete id="deleteMotorByIds" parameterType="String">
+        delete from motor where oid in 
+        <foreach item="oid" collection="array" open="(" separator="," close=")">
+            #{oid}
+        </foreach>
+    </delete>
+
+    <select id="topTenByTime" resultType="HashMap">
+        select
+            oid,
+            start_time,
+            end_time,
+            duration
+        from
+            motor
+        order by
+            start_time desc
+        limit 0,10
+    </select>
+    
+</mapper>
