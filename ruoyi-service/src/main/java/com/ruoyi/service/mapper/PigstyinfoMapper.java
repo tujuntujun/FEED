@@ -69,5 +69,29 @@ public interface PigstyinfoMapper
 	    * @return java.util.List<java.util.HashMap>
 	    */
 	public List<HashMap> recentTwentyByTime();
+
+	/**
+	 * 查询传感器中最近十条数据
+	 * @author tujun teavamc
+	 * @date 2019/4/15
+	 * @param []
+	 * @return java.util.List<java.util.HashMap>
+	 */
+
+	public List<HashMap> recentenByTime();
+
+	/**
+	 *
+	 * @return
+	 */
+/*	public int countAll();*/
+
+    public double prentem();
+
+	public double prenrh();
+
+	public double prenlight();
+
+	public double prenag();
 	
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 传感器数据 服务层
- * 
+ *
  * @author å± é¡
  * @date 2019-04-09
  */
@@ -61,5 +61,23 @@ public interface IPigstyinfoService
 	 * @return java.util.List<java.util.HashMap>
 	 */
 	public List<HashMap> recentTwentyByTime();
-	
+
+	/**
+	 * 查询传感器中最近二十条数据
+	 * @author tujun teavamc
+	 * @date 2019/4/15
+	 * @param []
+	 * @return java.util.List<java.util.HashMap>
+	 */
+	public List<HashMap> recentenByTime();
+
+/*	public int countAll();*/
+
+    public double prentem();
+
+	public double prenrh();
+
+	public double prenlight();
+
+	public double prenag();
 }

@@ -18,6 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<sql id="selectPigstyinfoVo">
         select id, log_id, d_name, rec_time, tem_v, rh_v, light_v, ag_v from pigstyinfo
     </sql>
+
 	
     <select id="selectPigstyinfoList" parameterType="Pigstyinfo" resultMap="PigstyinfoResult">
         <include refid="selectPigstyinfoVo"/>
@@ -90,5 +91,51 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         order by rec_time desc
         limit 0,20
     </select>
-    
+
+    <select id="recentenByTime" resultType="HashMap">
+        <include refid="selectPigstyinfoVo"/>
+        order by rec_time desc
+        limit 0,10
+    </select>
+
+<!--    <select id="countAll" resultType="int">
+        select count(*)
+        from pigstyinfo
+    </select>-->
+
+
+    <select id="prentem" resultType="double">
+        select tem_v
+        from pigstyinfo
+        order by rec_time
+        desc
+        limit 0,1
+    </select>
+
+
+    <select id="prenrh" resultType="double">
+        select rh_v
+        from pigstyinfo
+        order by rec_time
+        desc
+        limit 0,1
+    </select>
+
+    <select id="prenlight" resultType="double">
+        select light_v
+        from pigstyinfo
+        order by rec_time
+        desc
+        limit 0,1
+    </select>
+
+    <select id="prenag" resultType="double">
+        select ag_v
+        from pigstyinfo
+        order by rec_time
+        desc
+        limit 0,1
+    </select>
+
+
 </mapper>

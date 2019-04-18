@@ -92,5 +92,35 @@ public class PigstyinfoServiceImpl implements IPigstyinfoService
 	public List<HashMap> recentTwentyByTime(){
 		return pigstyinfoMapper.recentTwentyByTime();
 	}
-	
+
+	@Override
+	public List<HashMap> recentenByTime(){
+		return pigstyinfoMapper.recentenByTime();
+	}
+
+/*	@Override
+	public int countAll(){
+		return pigstyinfoMapper.countAll();
+	}*/
+
+	@Override
+	public double prentem(){
+		return pigstyinfoMapper.prentem();
+	}
+
+
+    @Override
+    public double prenrh(){
+        return pigstyinfoMapper.prenrh();
+	}
+
+	@Override
+	public double prenlight(){
+		return pigstyinfoMapper.prenlight();
+	}
+
+	@Override
+	public double prenag(){
+		return pigstyinfoMapper.prenag();
+	}
 }
