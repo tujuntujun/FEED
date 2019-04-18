@@ -86,7 +86,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         </foreach>
     </delete>
     
-    <select id="recentTwentyByTime" resultType="HashMap">
+    <select id="recenTwentyByTime" resultType="HashMap">
         <include refid="selectPigstyinfoVo"/>
         order by rec_time desc
         limit 0,20
@@ -97,6 +97,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         order by rec_time desc
         limit 0,10
     </select>
+<!--    <select id="selectTem" resultType="HashMap">
+        select temp_v
+        from pigstyinfo
+        order by rec_time
+        desc
+        limit 0,10
+    </select>-->
 
 <!--    <select id="countAll" resultType="int">
         select count(*)
