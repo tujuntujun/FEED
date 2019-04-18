@@ -98,6 +98,9 @@ public class PigstyinfoServiceImpl implements IPigstyinfoService
 		return pigstyinfoMapper.recentenByTime();
 	}
 
+/*	public List<HashMap> selectTem(){
+		return pigstyinfoMapper.selectTem();
+	}*/
 /*	@Override
 	public int countAll(){
 		return pigstyinfoMapper.countAll();

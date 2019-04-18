@@ -71,6 +71,8 @@ public interface IPigstyinfoService
 	 */
 	public List<HashMap> recentenByTime();
 
+/*	public List<HashMap> selectTem();*/
+
 /*	public int countAll();*/
 
     public double prentem();

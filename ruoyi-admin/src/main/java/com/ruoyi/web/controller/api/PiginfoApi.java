@@ -40,6 +40,13 @@ public class PiginfoApi {
         return ApiResService.convertList(pigstyinfoService.recentenByTime());
     }
 
+/*    @GetMapping(value = "/tem")
+    @CrossOrigin
+    @ApiOperation(value = "查询传感器中温度数据")
+    public ApiRes select(){
+        return ApiResService.convertList(pigstyinfoService.selectTem());
+    }*/
+
 /*    @GetMapping(value = "/selectCount")
     @CrossOrigin
     @ApiOperation(value = "查询所有数据")

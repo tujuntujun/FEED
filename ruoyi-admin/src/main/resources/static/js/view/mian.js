@@ -21,9 +21,9 @@ function init_echarts_recent20() {
             var logtime = new Array();
 
             for(i in pre_data){
-                tem.push(pre_data[i].tem_v);
-                rh.push(pre_data[i].rh_v);
-                ag.push(pre_data[i].ag_v);
+                tem.push(pre_data[i].temp_v);
+                rh.push(pre_data[i].humi_v);
+                ag.push(pre_data[i].flame_v);
                 lg.push(pre_data[i].light_v);
                 logtime.push(pre_data[i].rec_time.substring(11));
             }
@@ -417,3 +417,4 @@ function init_selectCount() {
         }
     })
 }
+

@@ -5,18 +5,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.ruoyi.service.mapper.PigstyinfoMapper">
     
     <resultMap type="Pigstyinfo" id="PigstyinfoResult">
-        <result property="id"    column="id"    />
+        <result property="id"    column="uid"    />
         <result property="logId"    column="log_id"    />
         <result property="dName"    column="d_name"    />
         <result property="recTime"    column="rec_time"    />
-        <result property="temV"    column="tem_v"    />
-        <result property="rhV"    column="rh_v"    />
+        <result property="temV"    column="temp_v"    />
+        <result property="rhV"    column="humi_v"    />
         <result property="lightV"    column="light_v"    />
-        <result property="agV"    column="ag_v"    />
+        <result property="agV"    column="flame_v"    />
     </resultMap>
 	
 	<sql id="selectPigstyinfoVo">
-        select id, log_id, d_name, rec_time, tem_v, rh_v, light_v, ag_v from pigstyinfo
+        select uid, log_id, d_name, rec_time, temp_v, humi_v, light_v, flame_v from pigstyinfo
     </sql>
 
 	
@@ -86,7 +86,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         </foreach>
     </delete>
     
-    <select id="recentTwentyByTime" resultType="HashMap">
+    <select id="recenTwentyByTime" resultType="HashMap">
         <include refid="selectPigstyinfoVo"/>
         order by rec_time desc
         limit 0,20
@@ -97,6 +97,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         order by rec_time desc
         limit 0,10
     </select>
+<!--    <select id="selectTem" resultType="HashMap">
+        select temp_v
+        from pigstyinfo
+        order by rec_time
+        desc
+        limit 0,10
+    </select>-->
 
 <!--    <select id="countAll" resultType="int">
         select count(*)
@@ -105,7 +112,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
     <select id="prentem" resultType="double">
-        select tem_v
+        select temp_v
         from pigstyinfo
         order by rec_time
         desc
@@ -114,7 +121,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
     <select id="prenrh" resultType="double">
-        select rh_v
+        select humi_v
         from pigstyinfo
         order by rec_time
         desc
@@ -130,7 +137,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
 
     <select id="prenag" resultType="double">
-        select ag_v
+        select flame_v
         from pigstyinfo
         order by rec_time
         desc
