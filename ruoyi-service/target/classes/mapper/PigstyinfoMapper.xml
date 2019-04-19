@@ -97,14 +97,38 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         order by rec_time desc
         limit 0,10
     </select>
-<!--    <select id="selectTem" resultType="HashMap">
-        select temp_v
+
+    <select id="selectTem" resultType="HashMap">
+        select temp_v,rec_time
         from pigstyinfo
         order by rec_time
         desc
         limit 0,10
-    </select>-->
+    </select>
 
+    <select id="selectHumi" resultType="HashMap">
+        select humi_v,rec_time
+        from pigstyinfo
+        order by rec_time
+        desc
+        limit 0,10
+    </select>
+
+    <select id="selectAmm" resultType="HashMap">
+        select flame_v,rec_time
+        from pigstyinfo
+        order by rec_time
+        desc
+        limit 0,10
+    </select>
+
+    <select id="selectLight" resultType="HashMap">
+        select light_v,rec_time
+        from pigstyinfo
+        order by rec_time
+        desc
+        limit 0,10
+    </select>
 <!--    <select id="countAll" resultType="int">
         select count(*)
         from pigstyinfo

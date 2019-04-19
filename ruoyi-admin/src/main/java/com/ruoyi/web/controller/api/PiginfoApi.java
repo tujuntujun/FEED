@@ -40,12 +40,33 @@ public class PiginfoApi {
         return ApiResService.convertList(pigstyinfoService.recentenByTime());
     }
 
-/*    @GetMapping(value = "/tem")
+    @GetMapping(value = "/tem")
     @CrossOrigin
     @ApiOperation(value = "查询传感器中温度数据")
     public ApiRes select(){
         return ApiResService.convertList(pigstyinfoService.selectTem());
-    }*/
+    }
+
+    @GetMapping(value = "/humi")
+    @CrossOrigin
+    @ApiOperation(value = "查询传感器中湿度数据")
+    public ApiRes selecthumi(){
+        return ApiResService.convertList(pigstyinfoService.selectHumi());
+    }
+
+    @GetMapping(value = "/light")
+    @CrossOrigin
+    @ApiOperation(value = "查询传感器中湿度数据")
+    public ApiRes selectLight(){
+        return ApiResService.convertList(pigstyinfoService.selectLight());
+    }
+
+    @GetMapping(value = "/amm")
+    @CrossOrigin
+    @ApiOperation(value = "查询传感器中氨气数据")
+    public ApiRes selectAmm(){
+        return ApiResService.convertList(pigstyinfoService.selectAmm());
+    }
 
 /*    @GetMapping(value = "/selectCount")
     @CrossOrigin

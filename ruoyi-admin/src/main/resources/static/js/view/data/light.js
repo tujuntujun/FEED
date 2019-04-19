@@ -1,28 +1,28 @@
 
-function amm_onload() {
+function light_onload() {
 
     // 前台图表
-    init_echarts_amm();
+    init_echarts_light();
 
 }
-function  init_echarts_amm(){
+function  init_echarts_light(){
     $.ajax({
         type: "GET",
-        url: "/api/piginfo/amm",
+        url: "/api/piginfo/light",
         datatype: "JSON",
         success: function (data) {
-            var amm = data.data;
-            var flame = new Array();
+            var light = data.data;
+            var guang = new Array();
             var logtime = new Array();
 
-            for (i in amm) {
-                flame.push(amm[i].flame_v);
-                logtime.push(amm[i].rec_time.substring(11));
+            for (i in light) {
+                guang.push(light[i].light_v);
+                logtime.push(light[i].rec_time.substring(11));
             }
 
-            var Amm = echarts.init(document.getElementById('Amm'));
+            var Light = echarts.init(document.getElementById('Light'));
 
-            Amm_option = {
+            Light_option = {
                 /*   backgroundColor: '#FFB6C1',*/
                 /*                title: {
                                     text: '请求数',
@@ -46,7 +46,7 @@ function  init_echarts_amm(){
                     itemWidth: 14,
                     itemHeight: 5,
                     itemGap: 13,
-                    data: ['氨气'],
+                    data: ['光照'],
                     right: '4%',
                     textStyle: {
                         fontSize: 12,
@@ -73,8 +73,8 @@ function  init_echarts_amm(){
                 }],
                 yAxis: [{
                     type: 'value',
-                    data:flame,
-                    name: '氨气值',
+                    data:guang,
+                    name: '光照值',
                     axisTick: {
                         show: false
                     },
@@ -96,7 +96,7 @@ function  init_echarts_amm(){
                     }
                 }],
                 series: [{
-                    name: '氨气值',
+                    name: '光照值',
                     type: 'line',
                     smooth: true,
                     symbol: 'circle',
@@ -138,11 +138,11 @@ function  init_echarts_amm(){
                             borderWidth: 10
                         }
                     },
-                    data:flame
+                    data:guang
                 } ]
             };
 
-            Amm.setOption(Amm_option);
+            Light.setOption(Light_option);
         }
     })
 }

@@ -80,7 +80,13 @@ public interface PigstyinfoMapper
 
 	public List<HashMap> recentenByTime();
 
-/*	public List<HashMap> selectTem();*/
+	public List<HashMap> selectTem();
+
+	public List<HashMap> selectHumi();
+
+	public List<HashMap> selectAmm();
+
+	public List<HashMap> selectLight();
 
 	/**
 	 *
