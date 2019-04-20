@@ -4,6 +4,10 @@ function humi_onload() {
     // 前台图表
     init_echarts_humi();
 
+    setInterval('humi_onload()',10000);
+
+    setInterval('init_echarts_humi',10000);
+
 }
 function  init_echarts_humi(){
     $.ajax({

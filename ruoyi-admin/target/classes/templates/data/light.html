@@ -1,4 +1,4 @@
-<!--氨气数据-->
+<!--温度数据-->
 <!DOCTYPE html>
 <html  lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -17,16 +17,16 @@
     <script th:src="@{/js/plugins/echarts/echarts-gl.min.js}"></script>
 </head>
 
-<body class="gray-bg" >
+<body class="gray-bg" onload="light_onload()">
 <div class="wrapper wrapper-content">
     <div class="row">
         <div class="col-sm-12">
-            <div class="ibox float-e-margins">
+            <div class="ibox float-e-margins" >
                 <div class="ibox-title">
-                    <h5>测试图表</h5>
+                    <h5>光照数据分析</h5>
                 </div>
                 <div class="ibox-content">
-                    <div class="echarts" id="test_1" ></div>
+                    <div class="echarts" style="height: 500px" id="Light" ></div>
                 </div>
             </div>
         </div>
@@ -35,6 +35,6 @@
 <script th:src="@{/js/jquery.min.js}"></script>
 <script th:src="@{/js/bootstrap.min.js}"></script>
 <!--引入main页面的JS文件-->
-<!--<script th:src="@{/js/view/mian.js}"></script>-->
+<script th:src="@{/js/view/data/light.js}"></script>
 </body>
 </html>

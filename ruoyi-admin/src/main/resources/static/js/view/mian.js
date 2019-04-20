@@ -4,7 +4,11 @@ function main_onload() {
     // 前台图表
     init_echarts_recent20();
 
-    init_selectCount()
+    init_selectCount();
+
+    setInterval('init_echarts_recent20()',10000);
+
+    setInterval('init_selectCount',10000);
 }
 
 function init_echarts_recent20() {
@@ -87,7 +91,7 @@ function init_echarts_recent20() {
                 series: [{
                     name: '温度值',
                     type: 'bar',
-                    barWidth:30,
+                    barWidth:35,
                     data:tem,        //数据
                     itemStyle: {
                         normal: {

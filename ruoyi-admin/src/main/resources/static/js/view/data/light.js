@@ -4,6 +4,10 @@ function light_onload() {
     // 前台图表
     init_echarts_light();
 
+    setInterval('light_onload()',10000);
+
+    setInterval('init_echarts_light',10000);
+
 }
 function  init_echarts_light(){
     $.ajax({

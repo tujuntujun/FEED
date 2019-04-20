@@ -4,6 +4,10 @@ function tem_onload() {
     // 前台图表
     init_echarts_tem();
 
+    setInterval('tem_onload()',10000);
+
+    setInterval('init_echarts_tem',10000);
+
 }
 function  init_echarts_tem(){
     $.ajax({

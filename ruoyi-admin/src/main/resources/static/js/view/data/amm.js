@@ -4,6 +4,11 @@ function amm_onload() {
     // 前台图表
     init_echarts_amm();
 
+    setInterval('amm_onload()',10000);
+
+    setInterval('init_echarts_amm',10000);
+
+
 }
 function  init_echarts_amm(){
     $.ajax({
