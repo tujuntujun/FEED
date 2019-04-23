@@ -4,9 +4,9 @@ function amm_onload() {
     // 前台图表
     init_echarts_amm();
 
-    setInterval('amm_onload()',10000);
+    setInterval('amm_onload()',1000);
 
-    setInterval('init_echarts_amm',10000);
+    setInterval('init_echarts_amm',1000);
 
 
 }
@@ -17,11 +17,11 @@ function  init_echarts_amm(){
         datatype: "JSON",
         success: function (data) {
             var amm = data.data;
-            var flame = new Array();
+            var air = new Array();
             var logtime = new Array();
 
             for (i in amm) {
-                flame.push(amm[i].flame_v);
+                air.push(amm[i].air_v);
                 logtime.push(amm[i].rec_time.substring(11));
             }
 
@@ -78,7 +78,7 @@ function  init_echarts_amm(){
                 }],
                 yAxis: [{
                     type: 'value',
-                    data:flame,
+                    data:air,
                     name: '氨气值',
                     axisTick: {
                         show: false
@@ -143,7 +143,7 @@ function  init_echarts_amm(){
                             borderWidth: 10
                         }
                     },
-                    data:flame
+                    data:air
                 } ]
             };
 

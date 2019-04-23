@@ -68,6 +68,7 @@ public class PiginfoApi {
         return ApiResService.convertList(pigstyinfoService.selectAmm());
     }
 
+
 /*    @GetMapping(value = "/selectCount")
     @CrossOrigin
     @ApiOperation(value = "查询所有数据")

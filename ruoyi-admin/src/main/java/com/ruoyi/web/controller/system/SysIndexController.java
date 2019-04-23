@@ -65,6 +65,12 @@ public class SysIndexController extends BaseController
         return "data/amm";
     }
 
+    @GetMapping("/system/flame")
+    public String flame(ModelMap mmap) {
+        mmap.put("version", Global.getVersion());
+        return "data/flame";
+    }
+
     @GetMapping("/system/light")
     public String light(ModelMap mmap) {
         mmap.put("version", Global.getVersion());

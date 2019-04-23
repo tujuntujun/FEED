@@ -6,9 +6,9 @@ function main_onload() {
 
     init_selectCount();
 
-    setInterval('init_echarts_recent20()',10000);
+    setInterval('init_echarts_recent20()',1000);
 
-    setInterval('init_selectCount',10000);
+    setInterval('init_selectCount',1000);
 }
 
 function init_echarts_recent20() {
