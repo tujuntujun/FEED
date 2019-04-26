@@ -88,6 +88,7 @@ public interface PigstyinfoMapper
 
 	public List<HashMap> selectLight();
 
+
 	/**
 	 *
 	 * @return
