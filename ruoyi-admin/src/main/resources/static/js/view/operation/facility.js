@@ -1,8 +1,12 @@
 
 function facility_onload() {
     init_facility();
-    setInterval('init_echarts_tem',1000);
-    setInterval('facility_onload()',1000);
+    all_time();
+    day_time();
+    start_time();
+    end_time();
+/*    setInterval('init_echarts_tem',1000);
+    setInterval('facility_onload()',1000);*/
 
 }
 
@@ -89,5 +93,54 @@ function  init_facility() {
         }
     })
 }
+
+function all_time() {
+    $.ajax({
+        type: "GET",
+        url: "/api/motor/allTime",
+        datatype: "JSON",
+        success: function (data) {
+            var time = data.data;
+            document.getElementById('Time').innerText = time;
+        }
+    })
+}
+
+function day_time() {
+    $.ajax({
+        type: "GET",
+        url: "/api/motor/dayTime",
+        datatype: "JSON",
+        success: function (data) {
+            var daytime = data.data;
+            document.getElementById('dayTime').innerText = daytime;
+        }
+    })
+}
+
+function start_time() {
+    $.ajax({
+        type: "GET",
+        url: "/api/motor/startTime",
+        datatype: "JSON",
+        success: function (data) {
+            var starttime = data.data;
+            document.getElementById('startTime').innerText = starttime;
+        }
+    })
+}
+
+function end_time() {
+    $.ajax({
+        type: "GET",
+        url: "/api/motor/endTime",
+        datatype: "JSON",
+        success: function (data) {
+            var endtime = data.data;
+            document.getElementById('endTime').innerText = endtime;
+        }
+    })
+}
+
 
 

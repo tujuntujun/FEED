@@ -92,5 +92,25 @@ public class MotorServiceImpl implements IMotorService
 	public List<HashMap> topTenByTime(){
 		return motorMapper.topTenByTime();
 	}
-	
+
+	@Override
+	public List<HashMap> allTime(){
+		return motorMapper.allTime();
+	}
+
+	@Override
+	public List<HashMap> dayTime(){
+		return motorMapper.dayTime();
+	}
+
+	@Override
+	public String startTime(){
+		return motorMapper.startTime();
+	}
+
+    @Override
+    public String endTime(){
+        return motorMapper.endTime();
+    }
+
 }

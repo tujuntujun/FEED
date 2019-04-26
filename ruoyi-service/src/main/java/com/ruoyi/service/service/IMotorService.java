@@ -61,5 +61,13 @@ public interface IMotorService
 	 * @return java.util.List<java.util.HashMap>
 	 */
 	public List<HashMap> topTenByTime();
+
+	public List<HashMap> allTime();
+
+	public List<HashMap> dayTime();
+
+	public String startTime();
+
+    public String endTime();
 	
 }

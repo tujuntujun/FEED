@@ -82,5 +82,32 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             start_time desc
         limit 0,10
     </select>
-    
+
+    <select id="allTime" resultType="double">
+        select count(*)
+        from
+            motor
+    </select>
+
+    <select id="dayTime" resultType="int">
+        select count(oid) as data
+        from
+            motor
+        where
+             to_days(start_time) = to_days(now())
+    </select>
+
+    <select id="startTime" resultType="String">
+        select start_time
+        from motor
+        order by start_time
+        desc limit 0,1
+    </select>
+
+    <select id="endTime" resultType="String">
+        select end_time
+        from motor
+        order by end_time
+        desc limit 0,1
+    </select>
 </mapper>

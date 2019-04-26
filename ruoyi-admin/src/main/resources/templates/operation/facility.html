@@ -20,18 +20,77 @@
 <body class="gray-bg" onload="facility_onload()">
 <div class="wrapper wrapper-content">
     <div class="row">
-        <div class="col-sm-8" style="height: 200px">
+        <div class="col-sm-8" >
             <div class="ibox float-e-margins" >
-                <div class="ibox-title">
+<!--                <div class="ibox-title" >
                     <h5>风扇控制</h5>
-                </div>
+                </div>-->
                 <div class="ibox-content">
                     <div class="echarts" style="height: 500px" id="temAhumi" ></div>
                 </div>
             </div>
         </div>
         <div class="col-sm-4">
-
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>风扇运行控制</h5>
+                            <div class="ibox-content">
+                                <h4 class="text-center">运行按钮</h4>
+                                <p class ="text-center">
+                                    <button type="button" class="btn btn-w-m btn-warning">运行</button>
+                                    <button type="button" class="btn btn-w-m btn-primary">停止</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>今日运行次数</h5>
+                            <div class="ibox-content" style="height: 70px">
+                                <h1><p class="text-center" id="dayTime"></p></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>总运行次数</h5>
+                            <div class="ibox-content" style="height: 70px">
+                                <h1><p class="text-center" id="Time"></p></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>开始运行时间</h5>
+                            <div class="ibox-content" style="height: 70px">
+                                <h3><p class="text-center" id="startTime"></p></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>结束运行时间</h5>
+                            <div class="ibox-content" style="height: 70px">
+                                <h3><p class="text-center" id="endTime"></p></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

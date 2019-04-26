@@ -35,6 +35,32 @@ public class MotorApi extends BaseController {
         return ApiResService.convertList(motorService.topTenByTime());
     }
 
+    @GetMapping(value = "/allTime")
+    @CrossOrigin
+    @ApiOperation(value = "展示总运行次数")
+    public ApiRes allTime(){
+        return ApiResService.convertList(motorService.allTime());
+    }
 
+    @GetMapping(value = "/dayTime")
+    @CrossOrigin
+    @ApiOperation(value = "展示每日运行时间")
+    public ApiRes dayTime(){
+        return ApiResService.convertList(motorService.dayTime());
+    }
+
+    @GetMapping(value = "/startTime")
+    @CrossOrigin
+    @ApiOperation(value = "展示开始时间")
+    public ApiRes startTime(){
+        return ApiResService.convertBean(motorService.startTime());
+    }
+
+    @GetMapping(value = "/endTime")
+    @CrossOrigin
+    @ApiOperation(value = "展示结束时间")
+    public ApiRes endTime(){
+        return ApiResService.convertBean(motorService.endTime());
+    }
 
 }

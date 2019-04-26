@@ -4,9 +4,9 @@ function amm_onload() {
     // 前台图表
     init_echarts_amm();
 
-    setInterval('amm_onload()',1000);
+/*    setInterval('amm_onload()',1000);
 
-    setInterval('init_echarts_amm',1000);
+    setInterval('init_echarts_amm',1000);*/
 
 
 }
