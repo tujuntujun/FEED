@@ -77,5 +77,30 @@ public interface MotorMapper
 	public String startTime();
 
     public String endTime();
-	
+
+	public List<HashMap> DdayTime();
+
+	public String DstartTime();
+
+	public String DendTime();
+
+	public List<HashMap> DallTime();
+
+	public List<HashMap> CdayTime();
+
+	public String CstartTime();
+
+	public String CendTime();
+
+	public List<HashMap> CallTime();
+
+	public List<HashMap> TallTime();
+
+	public List<HashMap> TdayTime();
+
+	public String TstartTime();
+
+	public String TendTime();
+
+
 }

@@ -11,14 +11,14 @@ function amm_onload() {
 
 }
 function  init_echarts_amm(){
-    $.ajax({
-        type: "GET",
-        url: "/api/piginfo/amm",
-        datatype: "JSON",
-        success: function (data) {
-            var amm = data.data;
-            var air = new Array();
-            var logtime = new Array();
+                $.ajax({
+                    type: "GET",
+                    url: "/api/piginfo/amm",
+                    datatype: "JSON",
+                    success: function (data) {
+                        var amm = data.data;
+                        var air = new Array();
+                        var logtime = new Array();
 
             for (i in amm) {
                 air.push(amm[i].air_v);

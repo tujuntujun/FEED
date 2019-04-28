@@ -5,6 +5,10 @@ function facility_onload() {
     day_time();
     start_time();
     end_time();
+    Tall_time();
+    Tday_time();
+    Tstart_time();
+    Tend_time();
 /*    setInterval('init_echarts_tem',1000);
     setInterval('facility_onload()',1000);*/
 
@@ -83,6 +87,24 @@ function  init_facility() {
                                 show:true
                             }
                         },
+                        itemStyle : {
+                            normal : {
+                                lineStyle:{
+                                    width:3,//折线宽度
+                                    color:"#F4A460"//折线颜色
+                                }
+                            }
+                        },
+                        areaStyle: {normal: {
+                                color: new echarts.graphic.LinearGradient(
+                                    0, 0, 0, 1,
+                                    [
+                                        {offset: 0, color: '#FFD39B'},
+                                        {offset: 0.5, color: '#FFE7BA'},
+                                        {offset: 1, color: '#FFF8DC'}
+                                    ]
+                                )
+                            }},
                         data:humi
                     },
                 ]
@@ -141,6 +163,55 @@ function end_time() {
         }
     })
 }
+
+function Tall_time() {
+    $.ajax({
+        type: "GET",
+        url: "/api/motor/TallTime",
+        datatype: "JSON",
+        success: function (data) {
+            var time = data.data;
+            document.getElementById('TTime').innerText = time;
+        }
+    })
+}
+
+function Tday_time() {
+    $.ajax({
+        type: "GET",
+        url: "/api/motor/TdayTime",
+        datatype: "JSON",
+        success: function (data) {
+            var daytime = data.data;
+            document.getElementById('TdayTime').innerText = daytime;
+        }
+    })
+}
+
+function Tstart_time() {
+    $.ajax({
+        type: "GET",
+        url: "/api/motor/TstartTime",
+        datatype: "JSON",
+        success: function (data) {
+            var starttime = data.data;
+            document.getElementById('TstartTime').innerText = starttime;
+        }
+    })
+}
+
+function Tend_time() {
+    $.ajax({
+        type: "GET",
+        url: "/api/motor/TendTime",
+        datatype: "JSON",
+        success: function (data) {
+            var endtime = data.data;
+            document.getElementById('TendTime').innerText = endtime;
+        }
+    })
+}
+
 
 
 

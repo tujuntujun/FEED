@@ -26,18 +26,32 @@
                     <h5>风扇控制</h5>
                 </div>-->
                 <div class="ibox-content">
-                    <div class="echarts" style="height: 500px" id="temAhumi" ></div>
+                    <div class="echarts" style="height: 700px" id="temAhumi" ></div>
                 </div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="ibox float-e-margins">
+                    <div class="ibox float-e-margins" style="height: 100px">
                         <div class="ibox-title">
-                            <h5>风扇运行控制</h5>
+                            <h5>风扇1运行控制</h5>
+                            <div class="ibox-content" >
+                                <p class ="text-center">
+                                    <button type="button" class="btn btn-w-m btn-warning">运行</button>
+                                    <button type="button" class="btn btn-w-m btn-primary">停止</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins" style="height: 100px">
+                        <div class="ibox-title">
+                            <h5>风扇2运行控制</h5>
                             <div class="ibox-content">
-                                <h4 class="text-center">运行按钮</h4>
                                 <p class ="text-center">
                                     <button type="button" class="btn btn-w-m btn-warning">运行</button>
                                     <button type="button" class="btn btn-w-m btn-primary">停止</button>
@@ -49,44 +63,72 @@
             </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>今日运行次数</h5>
-                            <div class="ibox-content" style="height: 70px">
-                                <h1><p class="text-center" id="dayTime"></p></h1>
-                            </div>
+                    <div class="widget style1 yellow-bg" style="height: 90px">
+                        <div class="text-right">
+                            <h4>风扇1今日运行次数</h4>
+                                <h1><p class="font-bold" id="dayTime"></p></h1>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>总运行次数</h5>
-                            <div class="ibox-content" style="height: 70px">
-                                <h1><p class="text-center" id="Time"></p></h1>
-                            </div>
+                    <div class="widget style1 yellow-bg" style="height: 90px">
+                        <div class="text-right">
+                            <h4>风扇1总运行次数</h4>
+                                <h1><p class="font-bold" id="Time"></p></h1>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>开始运行时间</h5>
-                            <div class="ibox-content" style="height: 70px">
-                                <h3><p class="text-center" id="startTime"></p></h3>
-                            </div>
+                    <div class="widget style1 lazur-bg" style="height: 90px">
+                        <div class="text-right">
+                            <h4>风扇1开始运行时间</h4>
+                                <h3><p class="font-bold" id="startTime"></p></h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>结束运行时间</h5>
-                            <div class="ibox-content" style="height: 70px">
-                                <h3><p class="text-center" id="endTime"></p></h3>
-                            </div>
+                    <div class="widget style1 lazur-bg" style="height: 90px">
+                        <div class="text-right">
+                            <h4>风扇1结束运行时间</h4>
+                                <h3><p class="font-bold" id="endTime"></p></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="widget style1 lavender-bg" style="height: 90px">
+                        <div class="text-right">
+                            <h4>风扇2今日运行次数</h4>
+                                <h1><p class="font-bold" id="TdayTime"></p></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="widget style1 lavender-bg" style="height: 90px">
+                        <div class="text-right">
+                            <h4>风扇2总运行次数</h4>
+                                <h1><p class="font-bold" id="TTime"></p></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="widget style1 red-bg" style="height: 90px">
+                        <div class="text-right">
+                            <h4>风扇2开始运行时间</h4>
+                                <h3><p class="font-bold" id="TstartTime"></p></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="widget style1 red-bg" style="height: 90px">
+                        <div class="text-right">
+                            <h4>风扇2结束运行时间</h4>
+                                <h3><p class="font-bold" id="TendTime"></p></h3>
                         </div>
                     </div>
                 </div>
