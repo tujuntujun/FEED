@@ -3575,6 +3575,11 @@ table.table-mail tr td {
     color: #fff
 }
 
+.lavender-bg {
+    background-color: #FF83FA;
+    color: #fff
+}
+
 .pink-bg {
     background-color: #FF6A6A;
     color: #fff
@@ -3587,6 +3592,36 @@ table.table-mail tr td {
 
 .yellow-bg {
     background-color: #f8ac59;
+    color: #fff
+}
+
+.Lyellow-bg {
+    background-color: #EEEE00;
+    color: #fff
+}
+
+.Dyellow-bg {
+    background-color: #FFEC8B;
+    color: #fff
+}
+
+.green-bg {
+    background-color: #C1FFC1;
+    color: #fff
+}
+
+.Lbule-bg {
+    background-color: #BFEFFF;
+    color: #fff
+}
+
+.Lpink-bg {
+    background-color: #FFAEB9;
+    color: #fff
+}
+
+.Dpink-bg {
+    background-color: #FF69B4;
     color: #fff
 }
 

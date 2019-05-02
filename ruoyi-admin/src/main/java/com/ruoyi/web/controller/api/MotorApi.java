@@ -147,4 +147,10 @@ public class MotorApi extends BaseController {
         return ApiResService.convertBean(motorService.CendTime());
     }
 
+    @GetMapping(value = "/button")
+    @CrossOrigin
+    @ApiOperation(value = "按钮")
+    public void button(){
+        System.out.print("按钮已触发");
+    }
 }
