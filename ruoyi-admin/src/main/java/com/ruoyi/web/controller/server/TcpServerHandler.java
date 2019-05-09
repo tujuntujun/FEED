@@ -24,6 +24,8 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<Object> {
     private final String CLOSEGUA = "06";
     private final String OPENCHUANG = "07";
     private final String CLOSECHUANG = "08";
+    private final String STOPCHUANG = "09";
+    private final String STOPGUA = "10";
     private final String SUCCEED = "1";
     private final String FAILED = "0";
 
@@ -60,7 +62,11 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<Object> {
                 ctx.channel().writeAndFlush(SUCCEED);
                 break;
             case CLOSEGUA:
-                log.info("TCP Server收到关闭刮粪板的指令：" + msg);
+                log.info("TCP Server收到回拉刮粪板的指令：" + msg);
+                ctx.channel().writeAndFlush(SUCCEED);
+                break;
+            case STOPGUA:
+                log.info("TCP Server收到暂停刮粪板的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
                 break;
             case OPENCHUANG:
@@ -68,7 +74,11 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<Object> {
                 ctx.channel().writeAndFlush(SUCCEED);
                 break;
             case CLOSECHUANG:
-                log.info("TCP Server收到关闭窗帘的指令：" + msg);
+                log.info("TCP Server收到收起窗帘的指令：" + msg);
+                ctx.channel().writeAndFlush(SUCCEED);
+                break;
+            case STOPCHUANG:
+                log.info("TCP Server收到暂停窗帘的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
                 break;
 

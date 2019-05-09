@@ -22,8 +22,9 @@ public class TcpClient {
 
     private static Logger log = LogManager.getLogger(TcpClient.class);
 
-    public static String HOST = "127.0.0.1";
-    public static int PORT = 7888;
+    public static String HOST = "47.94.238.110";
+/*    private static final String HOST = "127.0.0.1";*/
+    public static int PORT = 2345;
 
     public static Bootstrap bootstrap = getBootstrap();
     public static Channel channel = getChannel(HOST, PORT);
