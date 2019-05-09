@@ -1,5 +1,6 @@
 package com.ruoyi.web.controller.server;
 
+import com.ruoyi.web.controller.transmessage.TransServerHandler;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -18,7 +19,7 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<Object> {
 
     private final String OPENFAN = "01";
     private final String CLOSEFAN = "02";
-    private final String OPENFANONE = "03";
+    private final String OPENFANTWO = "03";
     private final String CLOSEFANTWO = "04";
     private final String OPENGUA = "05";
     private final String CLOSEGUA = "06";
@@ -44,47 +45,58 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<Object> {
             case OPENFAN:
                 log.info("TCP Server收到开启风扇1的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case CLOSEFAN:
                 log.info("TCP Server收到关闭风扇1的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
-            case OPENFANONE:
+            case OPENFANTWO:
                 log.info("TCP Server收到开启风扇2的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case CLOSEFANTWO:
                 log.info("TCP Server收到关闭风扇2的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case OPENGUA:
                 log.info("TCP Server收到开启刮粪板的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case CLOSEGUA:
                 log.info("TCP Server收到回拉刮粪板的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case STOPGUA:
                 log.info("TCP Server收到暂停刮粪板的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case OPENCHUANG:
                 log.info("TCP Server收到开启窗帘的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case CLOSECHUANG:
                 log.info("TCP Server收到收起窗帘的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case STOPCHUANG:
                 log.info("TCP Server收到暂停窗帘的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
 
             default:
                 log.info("不明指令：" + msg);
                 ctx.channel().writeAndFlush(FAILED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
         }
 
     }

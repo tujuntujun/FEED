@@ -22,7 +22,7 @@ public class TcpClient {
 
     private static Logger log = LogManager.getLogger(TcpClient.class);
 
-    public static String HOST = "47.94.238.110";
+    public static String HOST = "127.0.0.1";//47.94.238.110
 /*    private static final String HOST = "127.0.0.1";*/
     public static int PORT = 2345;
 

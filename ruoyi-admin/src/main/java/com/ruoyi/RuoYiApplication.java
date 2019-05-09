@@ -1,6 +1,9 @@
 package com.ruoyi;
 
 import com.ruoyi.web.controller.server.TcpServer;
+import com.ruoyi.web.controller.transmessage.TransServer;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +18,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
 @MapperScan("com.ruoyi.*.mapper")
 public class RuoYiApplication implements CommandLineRunner {
+
+    private static Logger log = LogManager.getLogger(RuoYiApplication.class);
 
     public static void main(String[] args)
     {
@@ -34,6 +39,12 @@ public class RuoYiApplication implements CommandLineRunner {
 
     @Override
     public  void  run(String... String ){
-
+        try {
+            TransServer.run();
+            log.info("端口1234的服务器启动成功...");
+        } catch (Exception e) {
+            log.info("端口1234的服务器启动成功...");
+            e.printStackTrace();
+        }
     }
 }
