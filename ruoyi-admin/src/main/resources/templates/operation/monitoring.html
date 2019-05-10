@@ -12,14 +12,14 @@
     <link href="../../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
     <link href="../../static/css/main/animate.min.css" th:href="@{/css/main/animate.min.css}" rel="stylesheet"/>
     <link href="../../static/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
-
+    <link href="../../static/css/video/video-js.css" th:href="@{/css/video/video-js.min.css}" rel="stylesheet"/>
     <!--echarts 可视化图形 插件-->
     <script th:src="@{/js/plugins/echarts/echarts.min.js}"></script>
     <script th:src="@{/js/plugins/echarts/echarts-gl.min.js}"></script>
 </head>
 <div>
     <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-12">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
             <h5>视频播放</h5>
@@ -42,83 +42,18 @@
             </div>
         </div>
         <div class="ibox-content">
-            <div class="player player-video fullscreen-enabled fullscreen-hide-controls">
-                <div class="player-video-wrapper">
-                    <div class="player-captions">
-                        <span></span>
-                    </div>
-                    <video poster="../../../plyr.io/poster.jpg" crossorigin="">
-                    <!-- Video files -->
-                    <source src="https://cdn.selz.com/plyr/1.0/movie.mp4" type="video/mp4">
-                    <source src="https://cdn.selz.com/plyr/1.0/movie.webm" type="video/webm">
-
-                    <!-- Text track file -->
-                    <track kind="captions" label="English" srclang="en" src="https://cdn.selz.com/plyr/1.0/example_captions_en.vtt" default="">
-
-                    <!-- Fallback for browsers that don't support the <video> element -->
-                    <a href="https://cdn.selz.com/plyr/1.0/movie.mp4">Download</a>
-                </video>
-                </div>
-                <div class="player-controls">
-                    <div class="player-progress">
-                        <label for="seek9917" class="sr-only">Seek</label>
-                        <input id="seek9917" class="player-progress-seek" type="range" min="0" max="100" step="0.5" value="0" data-player="seek">
-                        <progress class="player-progress-played" max="100" value="0"><span>0</span>% 播放中</progress>
-                        <progress class="player-progress-buffer" max="100" value="0"><span>0</span>% 缓冲中</progress>
-                    </div>
-                    <span class="player-controls-left">
-                        <button type="button" data-player="restart" style="width: 56px;height: 26px;">
-                            <svg><use xlink:href="#icon-restart"></use></svg>
-                            <span class="player-tooltip">重新播放</span>
-                        </button>
-                        <button type="button" data-player="rewind">
-                            <svg><use xlink:href="#icon-rewind"></use></svg>
-                            <span class="player-tooltip">后退10秒</span>
-                        </button>
-                        <button type="button" data-player="play" aria-label="播放">
-                            <svg><use xlink:href="#icon-play"></use></svg>
-                            <span class="player-tooltip">播放</span>
-                        </button>
-                        <button type="button" data-player="pause">
-                            <svg><use xlink:href="#icon-pause"></use></svg>
-                            <span class="player-tooltip">暂停</span></button>
-                        <button type="button" data-player="fast-forward">
-                            <svg><use xlink:href="#icon-fast-forward"></use></svg>
-                            <span class="player-tooltip">快进10秒</span></button>
-                        <span class="player-time">
-                            <span class="sr-only">当前时间</span>
-                            <span class="player-current-time">00:10</span>
-                        </span>
-                        <span class="player-time">
-                            <span class="sr-only">持续时间</span>
-                            <span class="player-duration">00:00</span>
-                        </span>
-                    </span>
-                    <span class="player-controls-right">
-                        <button type="button" data-player="mute" aria-pressed="false">
-                            <svg class="icon-muted">
-                                <use xlink:href="#icon-muted"></use>
-                            </svg>
-                            <svg><use xlink:href="#icon-volume"></use></svg>
-                            <span class="player-tooltip">静音</span>
-                        </button>
-                        <label for="volume9917" class="sr-only">音量</label>
-                        <input id="volume9917" class="player-volume" type="range" min="0" max="10" value="5" data-player="volume">
-                        <button type="button" data-player="fullscreen" aria-pressed="false">
-                            <svg class="icon-exit-fullscreen">
-                                <use xlink:href="#icon-exit-fullscreen"></use>
-                            </svg>
-                            <svg><use xlink:href="#icon-enter-fullscreen"></use></svg>
-                            <span class="player-tooltip">全屏</span>
-                        </button>
-                    </span>
-                </div>
-            </div>
+            <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="1000" height="500"
+                   poster="http://video-js.zencoder.com/oceans-clip.png"
+                   data-setup="{}">
+                <source th:src="@{/mp4/testmp5.mp4}" type='video/mp4' />
+                <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+                <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+            </video>
         </div>
     </div>
     </div>
 </div>
 </div>
-
+<script th:src="@{/js/plugins/video/video.min.js}"></script>
 </body>
 </html>
