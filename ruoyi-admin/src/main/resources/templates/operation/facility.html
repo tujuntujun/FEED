@@ -11,6 +11,8 @@
     <link href="../../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
     <link href="../../static/css/main/animate.min.css" th:href="@{/css/main/animate.min.css}" rel="stylesheet"/>
     <link href="../../static/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
+    <link href="../../static/css/normalize.min.css" th:href="@{/css/normalize.min.css}" rel="stylesheet"/>
+    <link href="../../static/css/button.css" th:href="@{/css/button.css}" rel="stylesheet"/>
 
     <!--echarts 可视化图形 插件-->
     <script th:src="@{/js/plugins/echarts/echarts.min.js}"></script>
@@ -33,30 +35,58 @@
         <div class="col-sm-4">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="ibox float-e-margins" style="height: 100px">
-                        <div class="ibox-title">
-                            <h5>风扇1运行控制</h5>
-                            <div class="ibox-content" >
-                                <p class ="text-center">
-                                    <button type="button" class="btn-outline btn-primary btn-lg" onclick="connectWS(this.value)" value="01">运行</button>
-                                    <button type="button" class="btn-outline btn-primary btn-lg" onclick="connectWS(this.value)" value="02">停止</button>
-                                </p>
+                    <div class="ibox-content">
+                        <center><h2>风扇1</h2></center>
+                        <div class="ibox float-e-margins" style="height: 50px">
+                                <div class="normal-container">
+                                    <div class="smile-rating-container">
+                                        <div class="smile-rating-toggle-container">
+                                            <form class="submit-rating">
+                                                <input id="meh"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="01" />
+                                                <input id="fun" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="02"/>
+                                                <label for="meh" class="rating-label rating-label-meh" >OFF</label>
+                                                <div class="smile-rating-toggle" ></div>
+
+                                                <div class="rating-eye rating-eye-left" ></div>
+                                                <div class="rating-eye rating-eye-right"></div>
+
+                                                <div class="mouth rating-eye-bad-mouth"></div>
+
+                                                <div class="toggle-rating-pill"></div>
+                                                <label for="fun" class="rating-label rating-label-fun"  >NO</label>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="ibox float-e-margins" style="height: 100px">
-                        <div class="ibox-title">
-                            <h5>风扇2运行控制</h5>
-                            <div class="ibox-content">
-                                <p class ="text-center">
-                                    <button type="button" class="btn-outline btn-primary btn-lg" onclick="connectWS(this.value)" value="03">运行</button>
-                                    <button type="button" class="btn-outline btn-primary btn-lg" onclick="connectWS(this.value)" value="04">停止</button>
-                                </p>
-                            </div>
+                    <div class="ibox-content">
+                        <center><h2>风扇2</h2></center>
+                        <div class="ibox float-e-margins" style="height: 50px">
+                                <div class="normal-container">
+                                    <div class="smile-rating-container">
+                                        <div class="smile-rating-toggle-container">
+                                            <form class="submit-rating">
+                                                <input id="twomeh"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="03" />
+                                                <input id="twofun" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="04"/>
+                                                <label for="twomeh" class="rating-label rating-label-meh" >OFF</label>
+                                                <div class="smile-rating-toggle" ></div>
+
+                                                <div class="rating-eye rating-eye-left" ></div>
+                                                <div class="rating-eye rating-eye-right"></div>
+
+                                                <div class="mouth rating-eye-bad-mouth"></div>
+
+                                                <div class="toggle-rating-pill"></div>
+                                                <label for="twofun" class="rating-label rating-label-fun"  >NO</label>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>

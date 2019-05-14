@@ -66,7 +66,7 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<Object> {
                 TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case CLOSEGUA:
-                log.info("TCP Server收到回拉刮粪板的指令：" + msg);
+                log.info("TCP Server收到复位刮粪板的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
                 TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
@@ -76,7 +76,7 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<Object> {
                 TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case CLOSECHUANG:
-                log.info("TCP Server收到收起窗帘的指令：" + msg);
+                log.info("TCP Server收到关闭窗帘的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
                 TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
