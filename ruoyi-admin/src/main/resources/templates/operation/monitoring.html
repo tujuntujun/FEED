@@ -14,6 +14,7 @@
     <link href="../../static/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
     <link href="../../static/css/video/video-js.css" th:href="@{/css/video/video-js.min.css}" rel="stylesheet"/>
     <link href="../../static/css/normalize.min.css" th:href="@{/css/normalize.min.css}" rel="stylesheet"/>
+    <link href="../../static/css/button.css" th:href="@{/css/button.css}" rel="stylesheet"/>
     <!--echarts 可视化图形 插件-->
     <script th:src="@{/js/plugins/echarts/echarts.min.js}"></script>
     <script th:src="@{/js/plugins/echarts/echarts-gl.min.js}"></script>
@@ -55,13 +56,67 @@
     </div>
     </div>
     <div class="col-lg-4">
-       <!-- <div class="toggle toggle&#45;&#45;text">
-            <input type="checkbox" id="toggle&#45;&#45;text" class="toggle&#45;&#45;checkbox">
-            <label class="toggle&#45;&#45;btn" for="toggle&#45;&#45;text" data-label-on="on" data-label-off="off"></label>
-        </div>-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox-content">
+                    <center><h2>投食</h2></center>
+                    <div class="ibox float-e-margins" style="height: 50px">
+                        <div class="normal-container">
+                            <div class="smile-rating-container">
+                                <div class="smile-rating-toggle-container">
+                                    <form class="submit-rating">
+                                        <input id="meh"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="01" />
+                                        <input id="fun" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="02"/>
+                                        <label for="meh" class="rating-label rating-label-meh" >OFF</label>
+                                        <div class="smile-rating-toggle" ></div>
+
+                                        <div class="rating-eye rating-eye-left" ></div>
+                                        <div class="rating-eye rating-eye-right"></div>
+
+                                        <div class="mouth rating-eye-bad-mouth"></div>
+
+                                        <div class="toggle-rating-pill"></div>
+                                        <label for="fun" class="rating-label rating-label-fun"  >NO</label>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox-content">
+                    <center><h2>喂水</h2></center>
+                    <div class="ibox float-e-margins" style="height: 50px">
+                        <div class="normal-container">
+                            <div class="smile-rating-container">
+                                <div class="smile-rating-toggle-container">
+                                    <form class="submit-rating">
+                                        <input id="mehT"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="03" />
+                                        <input id="funT" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="04"/>
+                                        <label for="mehT" class="rating-label rating-label-meh" >OFF</label>
+                                        <div class="smile-rating-toggle" ></div>
+
+                                        <div class="rating-eye rating-eye-left" ></div>
+                                        <div class="rating-eye rating-eye-right"></div>
+
+                                        <div class="mouth rating-eye-bad-mouth"></div>
+
+                                        <div class="toggle-rating-pill"></div>
+                                        <label for="funT" class="rating-label rating-label-fun"  >NO</label>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
+    </div>
 </div>
 <script th:src="@{/js/plugins/video/video.min.js}"></script>
 </body>

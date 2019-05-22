@@ -25,6 +25,10 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<Object> {
     private final String CLOSEGUA = "06";
     private final String OPENCHUANG = "07";
     private final String CLOSECHUANG = "08";
+    private final String OPENTOU = "09";
+    private final String CLOSETOU = "10";
+    private final String OPENSHUI = "11";
+    private final String CLOSESHUI = "12";
     private final String SUCCEED = "1";
     private final String FAILED = "0";
 
@@ -77,6 +81,26 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<Object> {
                 break;
             case CLOSECHUANG:
                 log.info("TCP Server收到关闭窗帘的指令：" + msg);
+                ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
+                break;
+            case OPENTOU:
+            log.info("TCP Server收到开启投食的指令：" + msg);
+            ctx.channel().writeAndFlush(SUCCEED);
+            TransServerHandler.sendMessage("S"+msg+"E\n");
+            break;
+            case CLOSETOU:
+                log.info("TCP Server收到关闭投食的指令：" + msg);
+                ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
+                break;
+            case OPENSHUI:
+                log.info("TCP Server收到开启喂水的指令：" + msg);
+                ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
+                break;
+            case CLOSESHUI:
+                log.info("TCP Server收到关闭喂水的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
                 TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
