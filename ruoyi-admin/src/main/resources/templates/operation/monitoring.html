@@ -48,14 +48,14 @@
             <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="900" height="500"
                    poster="http://video-js.zencoder.com/oceans-clip.png"
                    data-setup="{}">
-                <source src="rtmp://120.79.42.11:1936/live/test" type='rtmp/flv' />
+                <source src="rtmp://47.94.238.110:1935/hls/test" type='rtmp/flv' />
                 <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
                 <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
             </video>
         </div>
     </div>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-4" >
         <div class="row">
             <div class="col-sm-12">
                 <div class="ibox-content">
@@ -65,8 +65,8 @@
                             <div class="smile-rating-container">
                                 <div class="smile-rating-toggle-container">
                                     <form class="submit-rating">
-                                        <input id="meh"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="01" />
-                                        <input id="fun" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="02"/>
+                                        <input id="meh"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="09" />
+                                        <input id="fun" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="10"/>
                                         <label for="meh" class="rating-label rating-label-meh" >OFF</label>
                                         <div class="smile-rating-toggle" ></div>
 
@@ -94,8 +94,8 @@
                             <div class="smile-rating-container">
                                 <div class="smile-rating-toggle-container">
                                     <form class="submit-rating">
-                                        <input id="mehT"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="03" />
-                                        <input id="funT" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="04"/>
+                                        <input id="mehT"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="11" />
+                                        <input id="funT" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="12"/>
                                         <label for="mehT" class="rating-label rating-label-meh" >OFF</label>
                                         <div class="smile-rating-toggle" ></div>
 
@@ -119,5 +119,6 @@
     </div>
 </div>
 <script th:src="@{/js/plugins/video/video.min.js}"></script>
+<script th:src="@{/js/view/operation/monitoring.js}"></script>
 </body>
 </html>
