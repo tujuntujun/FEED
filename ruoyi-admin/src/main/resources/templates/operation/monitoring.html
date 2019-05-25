@@ -20,9 +20,10 @@
     <script th:src="@{/js/plugins/echarts/echarts-gl.min.js}"></script>
     <script th:src="@{/js/plugins/video/video.min.js}"></script>
 </head>
-<div>
+<body class="gray-bg" >
+<div class="wrapper wrapper-content">
     <div class="row">
-    <div class="col-lg-8">
+    <div class="col-sm-8">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
             <h5>视频播放</h5>
@@ -55,69 +56,57 @@
         </div>
     </div>
     </div>
-    <div class="col-lg-4">
+    <div class="col-sm-4">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="ibox float-e-margins" >
                 <div class="ibox-content">
-                    <center><h2>投食</h2></center>
-                    <div class="ibox float-e-margins" style="height: 50px">
-                        <div class="normal-container">
-                            <div class="smile-rating-container">
-                                <div class="smile-rating-toggle-container">
-                                    <form class="submit-rating">
-                                        <input id="meh"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="01" />
-                                        <input id="fun" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="02"/>
-                                        <label for="meh" class="rating-label rating-label-meh" >OFF</label>
-                                        <div class="smile-rating-toggle" ></div>
+                    <h2 class="text-center">投食</h2>
+                    <div class="smile-rating-container">
+                        <div class="smile-rating-toggle-container">
+                            <form class="submit-rating">
+                                <input id="meh"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="01"/>
+                                <input id="fun" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="02"/>
 
-                                        <div class="rating-eye rating-eye-left" ></div>
-                                        <div class="rating-eye rating-eye-right"></div>
-
-                                        <div class="mouth rating-eye-bad-mouth"></div>
-
-                                        <div class="toggle-rating-pill"></div>
-                                        <label for="fun" class="rating-label rating-label-fun"  >NO</label>
-                                    </form>
-                                </div>
-                            </div>
+                                <label for="meh" class="rating-label rating-label-meh" >OFF</label>
+                                <div class="smile-rating-toggle" ></div>
+                                <div class="rating-eye rating-eye-left" ></div>
+                                <div class="rating-eye rating-eye-right"></div>
+                                <div class="mouth rating-eye-bad-mouth"></div>
+                                <div class="toggle-rating-pill"></div>
+                                <label for="fun" class="rating-label rating-label-fun"  >NO</label>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-12">
+            <div class="ibox float-e-margins" >
                 <div class="ibox-content">
-                    <center><h2>喂水</h2></center>
-                    <div class="ibox float-e-margins" style="height: 50px">
-                        <div class="normal-container">
-                            <div class="smile-rating-container">
-                                <div class="smile-rating-toggle-container">
-                                    <form class="submit-rating">
-                                        <input id="mehT"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="03" />
-                                        <input id="funT" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="04"/>
-                                        <label for="mehT" class="rating-label rating-label-meh" >OFF</label>
-                                        <div class="smile-rating-toggle" ></div>
+                    <h2 class="text-center">喂水</h2>
+                    <div class="smile-rating-container">
+                        <div class="smile-rating-toggle-container">
+                            <form class="submit-rating">
+                                <input id="meh2"  name="satisfaction2" type="radio" onclick="connectWS(this.value)" value="03"/>
+                                <input id="fun2" name="satisfaction2" type="radio" onclick="connectWS(this.value)" value="04"/>
 
-                                        <div class="rating-eye rating-eye-left" ></div>
-                                        <div class="rating-eye rating-eye-right"></div>
-
-                                        <div class="mouth rating-eye-bad-mouth"></div>
-
-                                        <div class="toggle-rating-pill"></div>
-                                        <label for="funT" class="rating-label rating-label-fun"  >NO</label>
-                                    </form>
-                                </div>
-                            </div>
+                                <label for="meh2" class="rating-label rating-label-meh2" >OFF</label>
+                                <div class="smile-rating-toggle" ></div>
+                                <div class="rating-eye rating-eye-left" ></div>
+                                <div class="rating-eye rating-eye-right"></div>
+                                <div class="mouth rating-eye-bad-mouth"></div>
+                                <div class="toggle-rating-pill"></div>
+                                <label for="fun2" class="rating-label rating-label-fun2"  >NO</label>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
     </div>
 </div>
 <script th:src="@{/js/plugins/video/video.min.js}"></script>
+<script th:src="@{/js/view/operation/monitoring.js}"></script>
 </body>
 </html>
