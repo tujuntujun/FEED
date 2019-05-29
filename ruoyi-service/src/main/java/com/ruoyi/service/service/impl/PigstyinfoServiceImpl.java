@@ -116,6 +116,7 @@ public class PigstyinfoServiceImpl implements IPigstyinfoService
 	public List<HashMap> selectLight(){
 		return pigstyinfoMapper.selectLight();
 	}
+
 /*	@Override
 	public int countAll(){
 		return pigstyinfoMapper.countAll();

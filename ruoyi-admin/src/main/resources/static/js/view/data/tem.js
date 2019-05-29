@@ -4,9 +4,9 @@ function tem_onload() {
     // 前台图表
     init_echarts_tem();
 
-    setInterval('tem_onload()',1000);
-
-    setInterval('init_echarts_tem',1000);
+    // setInterval('tem_onload()',1000);
+    //
+    // setInterval('init_echarts_tem',1000);
 
 }
 function  init_echarts_tem(){

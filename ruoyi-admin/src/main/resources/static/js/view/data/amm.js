@@ -4,21 +4,21 @@ function amm_onload() {
     // 前台图表
     init_echarts_amm();
 
-    setInterval('amm_onload()',1000);
+/*    setInterval('amm_onload()',1000);
 
-    setInterval('init_echarts_amm',1000);
+    setInterval('init_echarts_amm',1000);*/
 
 
 }
 function  init_echarts_amm(){
-    $.ajax({
-        type: "GET",
-        url: "/api/piginfo/amm",
-        datatype: "JSON",
-        success: function (data) {
-            var amm = data.data;
-            var air = new Array();
-            var logtime = new Array();
+                $.ajax({
+                    type: "GET",
+                    url: "/api/piginfo/amm",
+                    datatype: "JSON",
+                    success: function (data) {
+                        var amm = data.data;
+                        var air = new Array();
+                        var logtime = new Array();
 
             for (i in amm) {
                 air.push(amm[i].air_v);

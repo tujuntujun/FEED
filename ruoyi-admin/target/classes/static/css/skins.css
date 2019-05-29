@@ -344,7 +344,7 @@
 
 /** 红色主题 skin-red **/
 .skin-red .navbar {
-	background-color: #dd4b39
+	background-color: #f296a0
 }
 
 .skin-red .navbar .nav>li>a {
@@ -392,7 +392,7 @@
 }
 
 .skin-red .logo {
-	background-color: #d73925;
+	background-color: #ef7784;
 	color: #fff;
 	border-bottom: 0 solid transparent
 }

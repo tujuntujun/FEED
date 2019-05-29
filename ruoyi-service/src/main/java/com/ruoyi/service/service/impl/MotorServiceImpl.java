@@ -92,5 +92,86 @@ public class MotorServiceImpl implements IMotorService
 	public List<HashMap> topTenByTime(){
 		return motorMapper.topTenByTime();
 	}
-	
+
+	@Override
+	public List<HashMap> allTime(){
+		return motorMapper.allTime();
+	}
+
+	@Override
+	public List<HashMap> dayTime(){
+		return motorMapper.dayTime();
+	}
+
+	@Override
+	public String startTime(){
+		return motorMapper.startTime();
+	}
+
+    @Override
+    public String endTime(){
+        return motorMapper.endTime();
+    }
+
+	@Override
+	public List<HashMap> DallTime(){
+		return motorMapper.DallTime();
+	}
+
+	@Override
+	public List<HashMap> DdayTime(){
+		return motorMapper.DdayTime();
+	}
+
+	@Override
+	public String DstartTime(){
+		return motorMapper.DstartTime();
+	}
+
+	@Override
+	public String DendTime(){
+		return motorMapper.DendTime();
+	}
+
+	@Override
+	public List<HashMap> CallTime(){
+		return motorMapper.CallTime();
+	}
+
+	@Override
+	public List<HashMap> CdayTime(){
+		return motorMapper.CdayTime();
+	}
+
+	@Override
+	public String CstartTime(){
+		return motorMapper.CstartTime();
+	}
+
+	@Override
+	public String CendTime(){
+		return motorMapper.CendTime();
+	}
+
+	@Override
+	public List<HashMap> TallTime(){
+		return motorMapper.TallTime();
+	}
+
+	@Override
+	public List<HashMap> TdayTime(){
+		return motorMapper.TdayTime();
+	}
+
+	@Override
+	public String TstartTime(){
+		return motorMapper.TstartTime();
+	}
+
+	@Override
+	public String TendTime(){
+		return motorMapper.TendTime();
+	}
+
+
 }

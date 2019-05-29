@@ -56,7 +56,7 @@ public class PiginfoApi {
 
     @GetMapping(value = "/light")
     @CrossOrigin
-    @ApiOperation(value = "查询传感器中湿度数据")
+    @ApiOperation(value = "查询传感器中光照数据")
     public ApiRes selectLight(){
         return ApiResService.convertList(pigstyinfoService.selectLight());
     }
@@ -92,7 +92,7 @@ public class PiginfoApi {
 
     @GetMapping(value = "/prenlight")
     @CrossOrigin
-    @ApiOperation(value = "查询当前氨气数据")
+    @ApiOperation(value = "查询当前光照数据")
     public ApiRes prenlight(){
         return ApiResService.convertBean(pigstyinfoService.prenlight());
     }
@@ -103,4 +103,6 @@ public class PiginfoApi {
     public ApiRes prenag(){
         return ApiResService.convertBean(pigstyinfoService.prenag());
     }
+
+
 }

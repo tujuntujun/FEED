@@ -166,12 +166,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
 
     <select id="prenag" resultType="double">
-        select flame_v
+        select air_v
         from pigstyinfo
         order by rec_time
         desc
         limit 0,1
     </select>
+
+
+
 
 
 </mapper>

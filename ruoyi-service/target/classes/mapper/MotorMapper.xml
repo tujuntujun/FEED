@@ -11,6 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="duration"    column="duration"    />
         <result property="dName"    column="d_name"    />
     </resultMap>
+
 	
 	<sql id="selectMotorVo">
         select oid, start_time, end_time, duration, d_name from motor
@@ -82,5 +83,123 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             start_time desc
         limit 0,10
     </select>
-    
+
+    <select id="allTime" resultType="double">
+        select count(*)
+        from
+            facility_motor
+        where d_name='1'
+    </select>
+
+    <select id="dayTime" resultType="int">
+        select count(oid) as data
+        from
+            facility_motor
+        where
+             to_days(start_time) = to_days(now()) and d_name='1'
+    </select>
+
+    <select id="startTime" resultType="String">
+        select start_time
+        from facility_motor
+        where d_name='1'
+        order by start_time
+        desc limit 0,1
+    </select>
+
+    <select id="endTime" resultType="String">
+        select end_time
+        from facility_motor
+        where d_name='1'
+        order by end_time
+        desc limit 0,1
+    </select>
+
+    <select id="TallTime" resultType="double">
+        select count(*)
+        from
+            facility_motor
+        where d_name='2'
+    </select>
+
+    <select id="TdayTime" resultType="int">
+        select count(oid) as data
+        from
+            facility_motor
+        where
+             to_days(start_time) = to_days(now()) and d_name='2'
+    </select>
+
+    <select id="TstartTime" resultType="String">
+        select start_time
+        from facility_motor
+        where d_name='2'
+        order by start_time
+        desc limit 0,1
+    </select>
+
+    <select id="TendTime" resultType="String">
+        select end_time
+        from facility_motor
+        where d_name='2'
+        order by end_time
+        desc limit 0,1
+    </select>
+
+    <select id="DdayTime" resultType="int">
+        select count(oid) as data
+        from
+            dung_motor
+        where
+             to_days(start_time) = to_days(now())
+    </select>
+
+    <select id="DstartTime" resultType="String">
+        select start_time
+        from dung_motor
+        order by start_time
+        desc limit 0,1
+    </select>
+
+    <select id="DendTime" resultType="String">
+        select end_time
+        from dung_motor
+        order by end_time
+        desc limit 0,1
+    </select>
+
+    <select id="DallTime" resultType="double">
+        select count(*)
+        from
+            dung_motor
+    </select>
+
+    <select id="CdayTime" resultType="int">
+        select count(oid) as data
+        from
+            curtain_motor
+        where
+             to_days(start_time) = to_days(now())
+    </select>
+
+    <select id="CstartTime" resultType="String">
+        select start_time
+        from curtain_motor
+        order by start_time
+        desc limit 0,1
+    </select>
+
+    <select id="CendTime" resultType="String">
+        select end_time
+        from curtain_motor
+        order by end_time
+        desc limit 0,1
+    </select>
+
+    <select id="CallTime" resultType="double">
+        select count(*)
+        from
+            curtain_motor
+    </select>
+
 </mapper>

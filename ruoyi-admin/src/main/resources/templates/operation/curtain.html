@@ -1,0 +1,109 @@
+<!--温度数据-->
+<!DOCTYPE html>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--360浏览器优先以webkit内核解析-->
+    <title>AI_FEED</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="../../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
+    <link href="../../static/css/main/animate.min.css" th:href="@{/css/main/animate.min.css}" rel="stylesheet"/>
+    <link href="../../static/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
+    <link href="../../static/css/normalize.min.css" th:href="@{/css/normalize.min.css}" rel="stylesheet"/>
+    <link href="../../static/css/button.css" th:href="@{/css/button.css}" rel="stylesheet"/>
+
+    <!--echarts 可视化图形 插件-->
+    <script th:src="@{/js/plugins/echarts/echarts.min.js}"></script>
+    <script th:src="@{/js/plugins/echarts/echarts-gl.min.js}"></script>
+</head>
+
+<body class="gray-bg" onload="curtain_onload()">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-8" >
+            <div class="ibox float-e-margins" >
+                <!--                <div class="ibox-title" >
+                                    <h5>风扇控制</h5>
+                                </div>-->
+                <div class="ibox-content">
+                    <div class="echarts" style="height: 700px" id="Light" ></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox-content">
+                    <div class="ibox float-e-margins" style="height: 50px">
+                                        <div class="normal-container">
+                                            <div class="smile-rating-container">
+                                                <div class="smile-rating-toggle-container">
+                                                    <form class="submit-rating">
+                                                        <input id="meh"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="07" />
+                                                        <input id="fun" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="08"/>
+                                                        <label for="meh" class="rating-label rating-label-meh" >OFF</label>
+                                                        <div class="smile-rating-toggle" ></div>
+
+                                                        <div class="rating-eye rating-eye-left" ></div>
+                                                        <div class="rating-eye rating-eye-right"></div>
+
+                                                        <div class="mouth rating-eye-bad-mouth"></div>
+
+                                                        <div class="toggle-rating-pill"></div>
+                                                        <label for="fun" class="rating-label rating-label-fun"  >NO</label>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                        </div>
+                </div>
+            </div>
+                </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="widget style1 Dpink-bg" style="height: 90px">
+                        <div class="text-right">
+                            <h4>今日运行次数</h4>
+                                <h1><p class="font-bold" id="dayTime"></p></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="widget style1 Dpink-bg" style="height: 90px">
+                        <div class="text-right">
+                            <h4>总运行次数</h4>
+                                <h1><p class="font-bold" id="Time"></p></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="widget style1 Lpink-bg " style="height: 90px">
+                        <div class="text-right">
+                                <h4>开始运行时间</h4>
+                                    <h3><p class="font-bold" id="startTime"></p></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="widget style1 Lpink-bg " style="height: 90px">
+                        <div class="text-right">
+                            <h4>结束运行时间</h4>
+                                <h3><p class="font-bold" id="endTime"></p></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!--引入main页面的JS文件-->
+<script th:src="@{/js/view/operation/curtain.js}"></script>
+</body>
+</html>

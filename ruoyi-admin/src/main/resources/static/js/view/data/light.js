@@ -4,9 +4,9 @@ function light_onload() {
     // 前台图表
     init_echarts_light();
 
-    setInterval('light_onload()',1000);
+/*    setInterval('light_onload()',1000);
 
-    setInterval('init_echarts_light',1000);
+    setInterval('init_echarts_light',1000);*/
 
 }
 function  init_echarts_light(){

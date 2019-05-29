@@ -80,6 +80,7 @@ public interface IPigstyinfoService
 
 	public List<HashMap> selectLight();
 
+
     public double prentem();
 
 	public double prenrh();
