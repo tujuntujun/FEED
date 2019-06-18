@@ -38,10 +38,10 @@
             	<li>
             		<div class="user-panel">
             			<a class="menuItem" title="个人中心" th:href="@{/system/user/profile}"> 
-            				<div class="hide" th:text="个人中心"></div>
+            				<!--<div class="hide" th:text="个人中心"></div>
 					        <div class="pull-left image">
-		                    	<img th:src="(${user.avatar} == '') ? @{/img/profile.jpg} : @{/profile/avatar/} + ${user.avatar}" class="img-circle" alt="User Image">
-					        </div>
+		                    	&lt;!&ndash;<img th:src="(${user.avatar} == '') ? @{/img/profile.jpg} : @{/profile/avatar/} + ${user.avatar}" class="img-circle" alt="User Image">&ndash;&gt;
+					        </div>-->
 				        </a>
 				        <div class="pull-left info">
 				          <p>[[${user.loginName}]]</p>
