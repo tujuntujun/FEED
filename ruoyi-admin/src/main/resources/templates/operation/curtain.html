@@ -37,68 +37,69 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="ibox-content">
-                    <div class="ibox float-e-margins" style="height: 50px">
-                                        <div class="normal-container">
-                                            <div class="smile-rating-container">
-                                                <div class="smile-rating-toggle-container">
-                                                    <form class="submit-rating">
-                                                        <input id="meh"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="07" />
-                                                        <input id="fun" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="08"/>
-                                                        <label for="meh" class="rating-label rating-label-meh" >OFF</label>
-                                                        <div class="smile-rating-toggle" ></div>
+                        <h2 class="text-center">水帘控制</h2>
+                        <div class="ibox float-e-margins" style="height: 50px">
+                            <div class="normal-container">
+                                <div class="smile-rating-container">
+                                    <div class="smile-rating-toggle-container">
+                                        <form class="submit-rating">
+                                            <input id="meh"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="08" />
+                                            <input id="fun" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="07"/>
+                                            <label for="meh" class="rating-label rating-label-meh" >OFF</label>
+                                            <div class="smile-rating-toggle" ></div>
 
-                                                        <div class="rating-eye rating-eye-left" ></div>
-                                                        <div class="rating-eye rating-eye-right"></div>
+                                            <div class="rating-eye rating-eye-left" ></div>
+                                            <div class="rating-eye rating-eye-right"></div>
 
-                                                        <div class="mouth rating-eye-bad-mouth"></div>
+                                            <div class="mouth rating-eye-bad-mouth"></div>
 
-                                                        <div class="toggle-rating-pill"></div>
-                                                        <label for="fun" class="rating-label rating-label-fun"  >NO</label>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                        </div>
-                </div>
-            </div>
-                </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="widget style1 Dpink-bg" style="height: 90px">
-                        <div class="text-right">
-                            <h4>今日运行次数</h4>
-                                <h1><p class="font-bold" id="dayTime"></p></h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="widget style1 Dpink-bg" style="height: 90px">
-                        <div class="text-right">
-                            <h4>总运行次数</h4>
-                                <h1><p class="font-bold" id="Time"></p></h1>
+                                            <div class="toggle-rating-pill"></div>
+                                            <label for="fun" class="rating-label rating-label-fun"  >NO</label>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="widget style1 Lpink-bg " style="height: 90px">
-                        <div class="text-right">
-                                <h4>开始运行时间</h4>
-                                    <h3><p class="font-bold" id="startTime"></p></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="widget style1 Lpink-bg " style="height: 90px">
-                        <div class="text-right">
-                            <h4>结束运行时间</h4>
-                                <h3><p class="font-bold" id="endTime"></p></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div>
+            <!--     <div class="row">
+                     <div class="col-sm-6">
+                         <div class="widget style1 Dpink-bg" style="height: 90px">
+                             <div class="text-right">
+                                 <h4>今日运行次数</h4>
+                                     <h1><p class="font-bold" id="dayTime"></p></h1>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-sm-6">
+                         <div class="widget style1 Dpink-bg" style="height: 90px">
+                             <div class="text-right">
+                                 <h4>总运行次数</h4>
+                                     <h1><p class="font-bold" id="Time"></p></h1>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="row">
+                     <div class="col-sm-6">
+                         <div class="widget style1 Lpink-bg " style="height: 90px">
+                             <div class="text-right">
+                                     <h4>开始运行时间</h4>
+                                         <h3><p class="font-bold" id="startTime"></p></h3>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-sm-6">
+                         <div class="widget style1 Lpink-bg " style="height: 90px">
+                             <div class="text-right">
+                                 <h4>结束运行时间</h4>
+                                     <h3><p class="font-bold" id="endTime"></p></h3>
+                             </div>
+                         </div>
+                     </div>
+                 </div>-->
+        </div>
     </div>
 </div>
 <script th:src="@{/js/jquery.min.js}"></script>

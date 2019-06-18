@@ -31,6 +31,8 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<Object> {
     private final String CLOSESHUI = "12";
     private final String SUCCEED = "1";
     private final String FAILED = "0";
+    private final String OPENGUAFENTWO = "13";
+    private final String CLOSEGUATWO = "14";
 
     /**
      * @Description 打印接收到的内容，并回传
@@ -75,20 +77,20 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<Object> {
                 TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case OPENCHUANG:
-                log.info("TCP Server收到开启窗帘的指令：" + msg);
+                log.info("TCP Server收到开启水帘的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
                 TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case CLOSECHUANG:
-                log.info("TCP Server收到关闭窗帘的指令：" + msg);
+                log.info("TCP Server收到关闭水帘的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
                 TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case OPENTOU:
-            log.info("TCP Server收到开启投食的指令：" + msg);
-            ctx.channel().writeAndFlush(SUCCEED);
-            TransServerHandler.sendMessage("S"+msg+"E\n");
-            break;
+                log.info("TCP Server收到开启投食的指令：" + msg);
+                ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
+                break;
             case CLOSETOU:
                 log.info("TCP Server收到关闭投食的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
@@ -101,6 +103,16 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<Object> {
                 break;
             case CLOSESHUI:
                 log.info("TCP Server收到关闭喂水的指令：" + msg);
+                ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
+                break;
+            case OPENGUAFENTWO:
+                log.info("TCP Server收到开启刮粪板2的指令：" + msg);
+                ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
+                break;
+            case CLOSEGUATWO:
+                log.info("TCP Server收到关闭刮粪板2的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
                 TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
