@@ -87,10 +87,10 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<Object> {
                 TransServerHandler.sendMessage("S"+msg+"E\n");
                 break;
             case OPENTOU:
-            log.info("TCP Server收到开启投食的指令：" + msg);
-            ctx.channel().writeAndFlush(SUCCEED);
-            TransServerHandler.sendMessage("S"+msg+"E\n");
-            break;
+                log.info("TCP Server收到开启投食的指令：" + msg);
+                ctx.channel().writeAndFlush(SUCCEED);
+                TransServerHandler.sendMessage("S"+msg+"E\n");
+                break;
             case CLOSETOU:
                 log.info("TCP Server收到关闭投食的指令：" + msg);
                 ctx.channel().writeAndFlush(SUCCEED);
