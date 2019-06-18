@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="ibox-content">
-                            <h2 class="text-center">刮粪</h2>
+                        <h2 class="text-center">刮粪板1控制</h2>
                         <div class="ibox float-e-margins" style="height: 50px">
                                 <div class="normal-container">
                                     <div class="smile-rating-container">
@@ -58,7 +58,32 @@
                     </div>
                 </div>
             </div>
-<!--            <div class="row">
+            <div class="row">
+                <div class="ibox float-e-margins" >
+                    <div class="ibox-content">
+                        <h2 class="text-center">刮粪板2控制</h2>
+                        <div class="smile-rating-container">
+                            <div class="smile-rating-toggle-container">
+                                <form class="submit-rating">
+                                    <input id="meh2"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="03" />
+                                    <input id="fun2" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="04"/>
+                                    <label for="meh2" class="rating-label rating-label-meh2" >OFF</label>
+                                    <div class="smile-rating-toggle" ></div>
+
+                                    <div class="rating-eye rating-eye-left" ></div>
+                                    <div class="rating-eye rating-eye-right"></div>
+
+                                    <div class="mouth rating-eye-bad-mouth"></div>
+
+                                    <div class="toggle-rating-pill"></div>
+                                    <label for="fun2" class="rating-label rating-label-fun2"  >NO</label>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      &lt;!&ndash;      <div class="row">
                 <div class="col-sm-6">
                     <div class="widget style1 Dyellow-bg" style="height: 90px">
                         <div class="text-right">
@@ -93,7 +118,142 @@
                         </div>
                     </div>
                 </div>
-            </div>-->
+            </div>&ndash;&gt;
+        </div>
+    </div>
+</div>-->
+<div class="wrapper wrapper-content">
+    <div class="row">
+            <div class="col-sm-8" >
+                <div class="ibox float-e-margins" >
+                    <div class="ibox-content">
+                        <div class="echarts" style="height: 700px" id="Amm" ></div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="ibox float-e-margins" >
+                    <div class="ibox-content">
+                        <h2 class="text-center">刮粪板1控制</h2></center>
+                        <div class="smile-rating-container">
+                            <div class="smile-rating-toggle-container">
+                                <form class="submit-rating">
+                                    <input id="meh"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="06" />
+                                    <input id="fun" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="05"/>
+                                    <label for="meh" class="rating-label rating-label-meh" >OFF</label>
+                                    <div class="smile-rating-toggle" ></div>
+
+                                    <div class="rating-eye rating-eye-left" ></div>
+                                    <div class="rating-eye rating-eye-right"></div>
+
+                                    <div class="mouth rating-eye-bad-mouth"></div>
+
+                                    <div class="toggle-rating-pill"></div>
+                                    <label for="fun" class="rating-label rating-label-fun"  >NO</label>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="ibox float-e-margins" >
+                    <div class="ibox-content">
+                        <h2 class="text-center">刮粪板2控制</h2>
+                        <div class="smile-rating-container">
+                            <div class="smile-rating-toggle-container">
+                                <form class="submit-rating">
+                                    <input id="meh2"  name="satisfaction" type="radio" onclick="connectWS(this.value)" value="14" />
+                                    <input id="fun2" name="satisfaction" type="radio" onclick="connectWS(this.value)" value="13"/>
+                                    <label for="meh2" class="rating-label rating-label-meh2" >OFF</label>
+                                    <div class="smile-rating-toggle" ></div>
+
+                                    <div class="rating-eye rating-eye-left" ></div>
+                                    <div class="rating-eye rating-eye-right"></div>
+
+                                    <div class="mouth rating-eye-bad-mouth"></div>
+
+                                    <div class="toggle-rating-pill"></div>
+                                    <label for="fun2" class="rating-label rating-label-fun2"  >NO</label>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--            <div class="row">
+                            <div class="col-sm-6">
+                                <div class="widget style1 yellow-bg" style="height: 90px">
+                                    <div class="text-right">
+                                        <h4>风扇1今日运行次数</h4>
+                                            <h1><p class="font-bold" id="dayTime"></p></h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="widget style1 yellow-bg" style="height: 90px">
+                                    <div class="text-right">
+                                        <h4>风扇1总运行次数</h4>
+                                            <h1><p class="font-bold" id="Time"></p></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="widget style1 lazur-bg" style="height: 90px">
+                                    <div class="text-right">
+                                        <h4>风扇1开始运行时间</h4>
+                                            <h3><p class="font-bold" id="startTime"></p></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="widget style1 lazur-bg" style="height: 90px">
+                                    <div class="text-right">
+                                        <h4>风扇1结束运行时间</h4>
+                                            <h3><p class="font-bold" id="endTime"></p></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="widget style1 lavender-bg" style="height: 90px">
+                                    <div class="text-right">
+                                        <h4>风扇2今日运行次数</h4>
+                                            <h1><p class="font-bold" id="TdayTime"></p></h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="widget style1 lavender-bg" style="height: 90px">
+                                    <div class="text-right">
+                                        <h4>风扇2总运行次数</h4>
+                                            <h1><p class="font-bold" id="TTime"></p></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="widget style1 red-bg" style="height: 90px">
+                                    <div class="text-right">
+                                        <h4>风扇2开始运行时间</h4>
+                                            <h3><p class="font-bold" id="TstartTime"></p></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="widget style1 red-bg" style="height: 90px">
+                                    <div class="text-right">
+                                        <h4>风扇2结束运行时间</h4>
+                                            <h3><p class="font-bold" id="TendTime"></p></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
         </div>
     </div>
 </div>

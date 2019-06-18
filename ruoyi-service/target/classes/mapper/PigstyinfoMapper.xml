@@ -13,7 +13,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="rhV"    column="humi_v"    />
         <result property="lightV"    column="light_v"    />
         <result property="agV"    column="flame_v"    />
-        <result property="Air"    column="air_v"    />
     </resultMap>
 	
 	<sql id="selectPigstyinfoVo">
@@ -32,7 +31,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
              <if test="rhV != null "> and rh_v = #{rhV}</if>
              <if test="lightV != null "> and light_v = #{lightV}</if>
              <if test="agV != null "> and flame_v = #{agV}</if>
-             <if test="Air != null "> and air_v = #{agV}</if>
          </where>
     </select>
     
@@ -51,7 +49,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="rhV != null  ">rh_v,</if>
 			<if test="lightV != null  ">light_v,</if>
 			<if test="agV != null  ">flame_v,</if>
-            <if test="Air != null  ">air_v,</if>
          </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
 			<if test="logId != null  ">#{logId},</if>
@@ -61,7 +58,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="rhV != null  ">#{rhV},</if>
 			<if test="lightV != null  ">#{lightV},</if>
 			<if test="agV != null  ">#{agV},</if>
-            <if test="Air != null  ">#{Air},</if>
          </trim>
     </insert>
 	 
@@ -75,7 +71,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="rhV != null  ">rh_v = #{rhV},</if>
             <if test="lightV != null  ">light_v = #{lightV},</if>
             <if test="agV != null  ">flame_v = #{agV},</if>
-            <if test="Air != null  ">air_v = #{Air},</if>
         </trim>
         where id = #{id}
     </update>
