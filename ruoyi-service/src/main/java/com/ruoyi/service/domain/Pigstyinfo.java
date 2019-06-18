@@ -105,7 +105,19 @@ public class Pigstyinfo extends BaseEntity
 		return agV;
 	}
 
-    public String toString() {
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public String getdName() {
+		return dName;
+	}
+
+	public void setdName(String dName) {
+		this.dName = dName;
+	}
+
+	public String toString() {
         return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
             .append("id", getId())
             .append("logId", getLogId())
