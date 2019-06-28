@@ -40,7 +40,7 @@ public class RuoYiApplication implements CommandLineRunner {
     @Override
     public  void  run(String... String ){
         try {
-            TransServer.run();
+            new TransServer().doStart();
             log.info("端口1234的服务器启动成功...");
         } catch (Exception e) {
             log.info("端口1234的服务器启动成功...");

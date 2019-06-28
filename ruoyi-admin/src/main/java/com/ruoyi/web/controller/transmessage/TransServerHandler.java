@@ -2,9 +2,12 @@ package com.ruoyi.web.controller.transmessage;
 
 
 import com.ruoyi.web.controller.server.TcpServerHandler;
+import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.util.CharsetUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,14 +17,15 @@ import java.util.List;
 /**
  * Created by MI on 2019/5/8.
  */
-public class TransServerHandler extends SimpleChannelInboundHandler<Object> {
+public class TransServerHandler extends ChannelInboundHandlerAdapter {
     private static Logger log = LogManager.getLogger(TcpServerHandler.class);
     private static List<Channel> channels = new ArrayList<>();
 
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
-        ctx.channel().writeAndFlush(msg);
-        return;
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        ByteBuf in = (ByteBuf) msg;
+        String data = in.toString(CharsetUtil.UTF_8);
+        System.out.println(data);
     }
 
 
