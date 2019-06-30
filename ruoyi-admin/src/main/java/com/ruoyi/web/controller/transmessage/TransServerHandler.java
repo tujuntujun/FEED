@@ -1,6 +1,8 @@
 package com.ruoyi.web.controller.transmessage;
 
 
+import com.ruoyi.service.domain.Pigstyinfo;
+import com.ruoyi.service.mapper.PigstyinfoMapper;
 import com.ruoyi.web.controller.server.TcpServerHandler;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
@@ -10,6 +12,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.CharsetUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,14 +23,26 @@ import java.util.List;
 public class TransServerHandler extends ChannelInboundHandlerAdapter {
     private static Logger log = LogManager.getLogger(TcpServerHandler.class);
     private static List<Channel> channels = new ArrayList<>();
+    @Autowired
+    private PigstyinfoMapper pigstyinfoMapper;
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         ByteBuf in = (ByteBuf) msg;
         String data = in.toString(CharsetUtil.UTF_8);
         System.out.println(data);
+        String message[] = data.split(";");
+        Pigstyinfo pigstyinfo = new Pigstyinfo();
+        pigstyinfo.setTemV(new Integer(message[0]));
+        pigstyinfo.setRhV(new Integer(message[1]));
+        pigstyinfo.setAgV(new Float(message[2]));
+        pigstyinfo.setLightV(new Float(message[3]));
+        try {
+            pigstyinfoMapper.insertPigstyinfo(pigstyinfo);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
