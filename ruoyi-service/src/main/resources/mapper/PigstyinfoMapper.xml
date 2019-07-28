@@ -23,7 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="selectPigstyinfoList" parameterType="Pigstyinfo" resultMap="PigstyinfoResult">
         <include refid="selectPigstyinfoVo"/>
         <where>  
-            <if test="id != null "> and id = #{id}</if>
+            <if test="id != null "> and uid = #{id}</if>
              <if test="logId != null "> and log_id = #{logId}</if>
              <if test="dName != null  and dName != '' "> and d_name = #{dName}</if>
              <if test="recTime != null "> and rec_time = #{recTime}</if>
@@ -36,7 +36,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
     <select id="selectPigstyinfoById" parameterType="Integer" resultMap="PigstyinfoResult">
         <include refid="selectPigstyinfoVo"/>
-        where id = #{id}
+        where uid = #{id}
     </select>
         
     <insert id="insertPigstyinfo" parameterType="Pigstyinfo" useGeneratedKeys="true" keyProperty="id">
@@ -72,15 +72,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="lightV != null  ">light_v = #{lightV},</if>
             <if test="agV != null  ">flame_v = #{agV},</if>
         </trim>
-        where id = #{id}
+        where uid = #{id}
     </update>
 
 	<delete id="deletePigstyinfoById" parameterType="Integer">
-        delete from pigstyinfo where id = #{id}
+        delete from pigstyinfo where uid = #{id}
     </delete>
 	
     <delete id="deletePigstyinfoByIds" parameterType="String">
-        delete from pigstyinfo where id in 
+        delete from pigstyinfo where uid in
         <foreach item="id" collection="array" open="(" separator="," close=")">
             #{id}
         </foreach>
