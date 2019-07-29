@@ -18,13 +18,19 @@ public class RuoYiApplicationTests {
 
     @Test
     public void contextLoads() {
+        String a = "-1;-1;62;102;";
+        String[] message = a.split(";");
         Pigstyinfo pigstyinfo = new Pigstyinfo();
-        pigstyinfo.setLogId(123);
-        pigstyinfo.setDName("2333");
+        pigstyinfo.setTemV(new Integer(message[0]));
+        pigstyinfo.setRhV(new Integer(message[1]));
+        pigstyinfo.setAgV(new Float(message[2]));
+        pigstyinfo.setLightV(new Float(message[3]));
         pigstyinfo.setRecTime(new Date());
-        pigstyinfo.setTemV(123);
-        pigstyinfo.setRhV(123);
-        pigstyinfo.setRhV(123);
-        pigstyinfoMapper.insertPigstyinfo(pigstyinfo);
+        System.out.println(pigstyinfo);
+        try {
+            pigstyinfoMapper.insertPigstyinfo(pigstyinfo);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
