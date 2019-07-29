@@ -15,6 +15,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,6 +38,7 @@ public class TransServerHandler extends ChannelInboundHandlerAdapter {
         pigstyinfo.setRhV(new Integer(message[1]));
         pigstyinfo.setAgV(new Float(message[2]));
         pigstyinfo.setLightV(new Float(message[3]));
+        pigstyinfo.setRecTime(new Date());
         try {
             pigstyinfoMapper.insertPigstyinfo(pigstyinfo);
         } catch (Exception e) {
