@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="temV"    column="temp_v"    />
         <result property="rhV"    column="humi_v"    />
         <result property="lightV"    column="light_v"    />
-        <result property="agV"    column="flame_v"    />
+        <result property="agV"    column="air_v"    />
     </resultMap>
 	
 	<sql id="selectPigstyinfoVo">
@@ -30,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
              <if test="temV != null "> and tem_v = #{temV}</if>
              <if test="rhV != null "> and rh_v = #{rhV}</if>
              <if test="lightV != null "> and light_v = #{lightV}</if>
-             <if test="agV != null "> and flame_v = #{agV}</if>
+             <if test="agV != null "> and air_v = #{agV}</if>
          </where>
     </select>
     
@@ -45,10 +45,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="logId != null  ">log_id,</if>
 			<if test="dName != null  and dName != ''  ">d_name,</if>
 			<if test="recTime != null  ">rec_time,</if>
-			<if test="temV != null  ">tem_v,</if>
-			<if test="rhV != null  ">rh_v,</if>
+			<if test="temV != null  ">temp_v,</if>
+			<if test="rhV != null  ">humi_v,</if>
 			<if test="lightV != null  ">light_v,</if>
-			<if test="agV != null  ">flame_v,</if>
+			<if test="agV != null  ">air_v,</if>
          </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
 			<if test="logId != null  ">#{logId},</if>
@@ -70,7 +70,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="temV != null  ">tem_v = #{temV},</if>
             <if test="rhV != null  ">rh_v = #{rhV},</if>
             <if test="lightV != null  ">light_v = #{lightV},</if>
-            <if test="agV != null  ">flame_v = #{agV},</if>
+            <if test="agV != null  ">air_v = #{agV},</if>
         </trim>
         where uid = #{id}
     </update>
