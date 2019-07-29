@@ -8,8 +8,8 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.CharsetUtil;
+import org.springframework.context.ApplicationContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +27,16 @@ public class TransServerHandler extends ChannelInboundHandlerAdapter {
     @Autowired
     private PigstyinfoMapper pigstyinfoMapper;
 
+    private static ApplicationContext applicationContext;
+
+    public TransServerHandler() {
+        pigstyinfoMapper = applicationContext.getBean(PigstyinfoMapper.class);
+    }
+
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         ByteBuf in = (ByteBuf) msg;
         String data = in.toString(CharsetUtil.UTF_8);
-        System.out.println(data);
         String message[] = data.split(";");
         Pigstyinfo pigstyinfo = new Pigstyinfo();
         pigstyinfo.setTemV(new Integer(message[0]));
@@ -63,6 +68,14 @@ public class TransServerHandler extends ChannelInboundHandlerAdapter {
         for (Channel channel : channels) {
             channel.writeAndFlush(msg);
         }
+    }
+
+    public static ApplicationContext getApplicationContext() {
+        return applicationContext;
+    }
+
+    public static void setApplicationContext(ApplicationContext applicationContext) {
+        TransServerHandler.applicationContext = applicationContext;
     }
 
     public static void sendMessage(Channel channel, String msg) {
